@@ -43,6 +43,8 @@ export default {
   methods: {
     onTrackClick(i) {
       this.active = i
+      navigator.vibrate([10, 10, 5, 5, 3])
+      // navigator.vibrate([100, 100, 50, 50, 25, 25, 12, 12, 6, 6, 3, 3])
     }
   },
 }
