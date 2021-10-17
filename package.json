@@ -3,16 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "serve": "./node_modules/.bin/vue-cli-service serve",
+    "build": "./node_modules/.bin/vue-cli-service build"
   },
   "dependencies": {
+    "@fontsource/roboto": "^4.5.1",
+    "@mdi/js": "^6.2.95",
     "core-js": "^3.6.5",
+    "reset.css": "^2.0.2",
     "vue": "^3.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
+    "@vue/cli-service": "^4.5.14",
     "@vue/compiler-sfc": "^3.0.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2"
