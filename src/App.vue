@@ -1,20 +1,23 @@
 <template>
   <!--  <Icon icon="play-speed" color="red" size="medium"></Icon>-->
   <!--  <Track cover="./albums/Slaughter to Prevail.jpg" :active="true"/>-->
-  <TrackList :tracks="tracks" :active="active" @trackClick="onTrackClick" />
-  <Player />
+  <XAudio/>
+  <TrackList :tracks="tracks" :active="active" @trackClick="onTrackClick"/>
+  <Player/>
 </template>
 
 <script>
 import Icon from "./components/Icon.vue";
 import TrackList from "./components/TrackList";
 import Player from "./components/Player";
+import XAudio from "./components/XAudio";
 
 export default {
   components: {
     Icon,
     TrackList,
     Player,
+    XAudio,
   },
 
   data() {
