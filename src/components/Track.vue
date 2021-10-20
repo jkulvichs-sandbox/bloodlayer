@@ -1,8 +1,8 @@
 <template>
-  <div class="track d-flex rounded" :class="{ 'active': active }">
-    <img :src="cover" class="cover rounded">
-    <div class="info d-flex flex-column">
-      <div class="artist font-large" :class="{ active }">{{ artist }}</div>
+  <div class="track " :class="{ active: active }">
+    <img :src="cover" class="cover" />
+    <div class="info">
+      <div class="artist" :class="{ active }">{{ artist }}</div>
       <div class="name" :class="{ active }">{{ name }}</div>
     </div>
   </div>
@@ -11,43 +11,51 @@
 <script>
 export default {
   props: {
-    cover: {type: String, default: ''},
-    artist: {type: String, default: 'Unknown Artist'},
-    name: {type: String, default: 'Unnamed'},
-    active: {type: Boolean, default: false},
-  }
-}
+    cover: { type: String, default: "" },
+    artist: { type: String, default: "Unknown Artist" },
+    name: { type: String, default: "Unnamed" },
+    active: { type: Boolean, default: false },
+  },
+};
 </script>
 
 <style lang="sass" scoped>
+@import "@/styles/_variables"
+
+
 .track
-  padding: 10px 10px 10px 10px
+  display: flex
+  align-items: center
+  padding: $indent-medium
   cursor: pointer
-  background: #333333
+  background: $color-background
   transition: .1s ease-out
+  border-radius: $radius
   &.active
-    background: #FAFAFA
+    background: $color-foreground
     padding: 10px 10px 10px 20px
 
 .cover
-  width: 60px
-  height: 60px
-  background: #EDE734
+  width: 40px
+  height: 40px
+  background: $color-accent
   object-fit: cover
-  margin: 0 10px 0 0
+  margin: 0 $indent-medium 0 0
+  border-radius: $radius
 
 .info
   justify-content: center
 
-  .artist
-    margin: 0 0 10px 0
-    color: #FFFFFF
-    &.active
-      color: #212121
+.artist
+  margin: 0 0 $indent-small 0
+  color: $color-foreground
+  &.active
+    color: $color-primary
 
-  .name
-    opacity: .8
-    color: #FFFFFF
-    &.active
-      color: #212121
+.name
+  opacity: .8
+  color: $color-foreground
+  font-size: $font-medium
+  &.active
+    color: $color-primary
 </style>
